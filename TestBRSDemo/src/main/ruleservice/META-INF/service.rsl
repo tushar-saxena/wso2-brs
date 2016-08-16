@@ -1,0 +1,16 @@
+<brs:ruleService name="TestBRS" scope="Request"
+  targetNamespace="http://com.test/greeting" xmlns:brs="http://wso2.org/carbon/rules">
+  <brs:ruleSet>
+    <brs:properties/>
+    <brs:rule resourceType="regular" sourceType="file">MyRule.drl</brs:rule>
+  </brs:ruleSet>
+  <brs:operation name="greetMe">
+    <brs:input namespace="http://com.test/greeting" wrapperElementName="user">
+      <brs:fact elementName="user" namespace="http://com.test/greeting" type="com.example.User"/>
+    </brs:input>
+    <brs:output namespace="http://com.test/greeting" wrapperElementName="greetingMessage">
+      <brs:fact elementName="greetingMessage"
+        namespace="http://com.test/greeting" type="com.example.GreetingMessage"/>
+    </brs:output>
+  </brs:operation>
+</brs:ruleService>
